@@ -26,7 +26,7 @@
 
 <div class="top-bar">
   🔥 Oferta por tempo limitado — garanta agora!
-  <a href="https://pay.wiapy.com/DKo0Mv-TUf1" class="top-bar-cta">Quero o guia — R$19,90</a>
+  <a href="https://pay.wiapy.com/DKo0Mv-TUf1" class="top-bar-cta checkout-btn">Quero o guia — R$19,90</a>
 </div>
 
 <section class="hero">
@@ -43,7 +43,7 @@
       <div class="hero-de">De R$69,40</div>
       <div class="hero-por"><span>R$</span>19<span>,90</span></div>
     </div>
-    <a href="https://pay.wiapy.com/DKo0Mv-TUf1" class="btn-main" onclick="fbq('track','InitiateCheckout',{value:19.90,currency:'BRL'})">🕯️ Quero meu guia agora — R$19,90</a>
+    <a href="https://pay.wiapy.com/DKo0Mv-TUf1" class="btn-main checkout-btn">🕯️ Quero meu guia agora — R$19,90</a>
     <p class="btn-sub-text">✓ Acesso imediato &nbsp;|&nbsp; ✓ Pix e cartão &nbsp;|&nbsp; ✓ 7 dias de garantia</p>
   </div>
 </section>
@@ -175,7 +175,7 @@
       <div class="oferta-por"><sup>R$</sup>19<sup>,90</sup></div>
       <div class="oferta-taxa">Taxa única · Acesso imediato · Sem mensalidade</div>
     </div>
-    <a href="https://pay.wiapy.com/DKo0Mv-TUf1" class="btn-main" onclick="fbq('track','InitiateCheckout',{value:19.90,currency:'BRL'})">🕯️ Quero meu Atelier agora — R$19,90</a>
+    <a href="https://pay.wiapy.com/DKo0Mv-TUf1" class="btn-main checkout-btn">🕯️ Quero meu Atelier agora — R$19,90</a>
     <p style="font-size:12px;color:#9CA3AF;margin-top:12px">✓ Pix e cartão &nbsp;|&nbsp; ✓ Acesso imediato &nbsp;|&nbsp; ✓ 7 dias de garantia</p>
   </div>
 </section>
@@ -210,7 +210,7 @@
 <section class="cta-final">
   <h2>Sua primeira vela pode ser hoje</h2>
   <p>Não espere mais. Com R$19,90 você tem acesso a tudo que precisa para começar — do zero à primeira venda.</p>
-  <a href="https://pay.wiapy.com/DKo0Mv-TUf1" class="btn-white" onclick="fbq('track','InitiateCheckout',{value:19.90,currency:'BRL'})">🕯️ Quero começar agora — R$19,90</a>
+  <a href="https://pay.wiapy.com/DKo0Mv-TUf1" class="btn-white checkout-btn">🕯️ Quero começar agora — R$19,90</a>
   <p style="margin-top:14px;font-size:12px;opacity:0.6">✓ Acesso imediato &nbsp;|&nbsp; ✓ 7 dias de garantia &nbsp;|&nbsp; ✓ Pix e cartão</p>
 </section>
 
@@ -223,6 +223,30 @@
 
 
 
-<script defer>document.querySelectorAll('.faq-btn').forEach(b=>{b.addEventListener('click',()=>{const i=b.parentElement,a=i.querySelector('.faq-answer'),o=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-answer').style.maxHeight='0'});if(!o){i.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}})});</script>
+<script defer>
+// FAQ accordion
+document.querySelectorAll('.faq-btn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var i=b.parentElement,a=i.querySelector('.faq-answer'),o=i.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(x){
+      x.classList.remove('open');
+      x.querySelector('.faq-answer').style.maxHeight='0';
+    });
+    if(!o){i.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+  });
+});
+
+// Botões de checkout - tracking seguro
+document.querySelectorAll('.checkout-btn').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    try{
+      if(typeof fbq==='function'){
+        fbq('track','InitiateCheckout',{value:19.90,currency:'BRL'});
+      }
+    }catch(err){}
+    // Deixa o link funcionar normalmente
+  });
+});
+</script>
 </body>
 </html>
