@@ -1,0 +1,6 @@
+{
+  "name": "Atelier das Velas",
+  "description": "Página de vendas do Atelier das Velas — 40 receitas para criar, presentear e vender.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

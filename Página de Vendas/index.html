@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier das Velas — 40 receitas para criar, presentear e vender</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --sage: #7D9B76;
+      --light-sage: #A8C5A0;
+      --dark-sage: #4A7A52;
+      --creme: #FAF7F0;
+      --off-white: #FDFCF8;
+      --gold: #C9A84C;
+      --dark: #2C2C2A;
+      --serif: 'DM Serif Display', serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    *, ::before, ::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-family: var(--sans); color: var(--dark); background-color: var(--off-white); }
+    body { overflow-x: hidden; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+    .section-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.75rem); color: var(--dark); text-align: center; margin-bottom: 0.75rem; font-weight: 400; letter-spacing: -0.01em; line-height: 1.2; }
+    .section-subtitle { font-size: clamp(0.95rem, 2vw, 1.1rem); text-align: center; color: #6C6C68; max-width: 600px; margin: 0 auto 3.5rem auto; line-height: 1.5; }
+    
+    /* 1. HERO */
+    .hero-sec { background-color: var(--creme); padding: 7rem 1.5rem 6.5rem 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 85vh; text-align: center; }
+    .hero-title { font-family: var(--serif); font-size: clamp(2.8rem, 7vw, 5.2rem); font-weight: 400; color: var(--dark); margin: 0; line-height: 1.1; letter-spacing: -0.02em; }
+    .gold-line { width: 90px; height: 1.5px; background-color: var(--gold); margin: 2rem auto; }
+    .hero-subtitle { font-family: var(--sans); font-size: clamp(1.15rem, 2.8vw, 1.55rem); font-style: italic; font-weight: 400; color: #555551; max-width: 780px; margin: 0 auto 1.5rem auto; line-height: 1.5; }
+    .hero-desc { font-size: clamp(1rem, 2vw, 1.12rem); color: #72726E; max-width: 620px; margin: 0 auto 3rem auto; line-height: 1.6; }
+    .btn-cta { display: inline-block; background-color: var(--sage); color: var(--off-white); font-family: var(--sans); font-size: 1.1rem; font-weight: 600; padding: 1.15rem 3rem; border-radius: 4px; text-decoration: none; transition: all 0.3s ease; letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid var(--sage); box-shadow: 0 4px 12px rgba(125, 155, 118, 0.15); cursor: pointer; }
+    .btn-cta:hover { background-color: #6a8563; border-color: #6a8563; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(125, 155, 118, 0.25); }
+    
+    /* 2. PARA QUEM É ESSE GUIA */
+    .guide-sec { background-color: var(--off-white); padding: 6.5rem 1.5rem; }
+    .guide-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; max-width: 960px; margin: 0 auto; }
+    .guide-card { background-color: var(--off-white); border: 1px solid var(--sage); border-radius: 8px; padding: 3.5rem 2.8rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .guide-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(125, 155, 118, 0.08); }
+    .guide-card h3 { font-family: var(--serif); font-size: 1.8rem; color: var(--sage); margin-bottom: 1.25rem; font-weight: 400; }
+    .guide-card p { color: #555551; font-size: 1.05rem; line-height: 1.7; }
+    @media (max-width: 768px) {
+      .guide-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .guide-card { padding: 2.5rem 1.8rem; }
+    }
+    
+    /* 3. O QUE VOCÊ VAI RECEBER */
+    .receive-sec { background-color: var(--creme); padding: 6.5rem 1.5rem; }
+    .receive-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .receive-card { background-color: var(--off-white); border: 1px solid var(--sage); border-radius: 8px; padding: 2.8rem 2rem; transition: all 0.3s ease; display: flex; flex-direction: column; }
+    .receive-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(125, 155, 118, 0.08); }
+    .receive-card-num { font-family: var(--serif); font-size: 2.5rem; color: var(--gold); margin-bottom: 1rem; line-height: 1; }
+    .receive-card h3 { font-family: var(--serif); font-size: 1.35rem; color: var(--dark); margin-bottom: 1rem; font-weight: 400; line-height: 1.3; }
+    .receive-card p { color: #555551; font-size: 0.98rem; line-height: 1.6; }
+    @media (max-width: 1024px) { .receive-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      .receive-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .receive-card { padding: 2rem 1.75rem; }
+    }
+    
+    /* 4. PRÉVIA – CARROSSEL */
+    .carousel-sec { background-color: var(--off-white); padding: 6.5rem 1.5rem; overflow: hidden; }
+    .carousel-container { max-width: 1000px; margin: 0 auto; position: relative; padding: 0 3.5rem; }
+    .carousel-wrapper { overflow: hidden; width: 100%; }
+    .carousel-track { display: flex; transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); touch-action: pan-y; cursor: grab; }
+    .carousel-track:active { cursor: grabbing; }
+    .carousel-slide { flex: 0 0 100%; padding: 0 10px; user-select: none; }
+    .slide-card { background-color: var(--creme); border-radius: 8px; border: 1px solid var(--sage); overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+    .slide-img-container { width: 100%; aspect-ratio: 4 / 3; overflow: hidden; }
+    .slide-img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+    .slide-caption { padding: 1.5rem; text-align: center; font-family: var(--serif); font-size: 1.25rem; color: var(--dark); font-weight: 400; }
+    .carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 12px; z-index: 10; color: var(--sage); transition: color 0.3s ease; display: flex; align-items: center; justify-content: center; }
+    .carousel-arrow:hover { color: var(--gold); }
+    .arrow-prev { left: 0; }
+    .arrow-next { right: 0; }
+    .carousel-dots { display: flex; justify-content: center; gap: 10px; margin-top: 2.2rem; }
+    .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background-color: var(--light-sage); cursor: pointer; border: none; padding: 0; transition: all 0.3s ease; }
+    .carousel-dot.active { background-color: var(--sage); transform: scale(1.4); }
+    @media (min-width: 768px) { .carousel-slide { flex: 0 0 50%; padding: 0 15px; } }
+    @media (max-width: 600px) {
+      .carousel-container { padding: 0; }
+      .carousel-arrow { display: none; }
+    }
+    
+    /* 5. NÚMEROS QUE IMPRESSIONAM */
+    .stats-sec { background-color: var(--dark-sage); color: var(--creme); padding: 6.5rem 1.5rem; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; max-width: 900px; margin: 0 auto; }
+    .stats-item { text-align: center; }
+    .stats-num { font-family: var(--serif); font-size: clamp(3.5rem, 8vw, 5.5rem); line-height: 1; color: var(--creme); margin-bottom: 0.75rem; font-weight: 400; }
+    .stats-label { font-family: var(--sans); font-size: clamp(0.95rem, 2vw, 1.1rem); text-transform: uppercase; letter-spacing: 0.1em; color: rgba(250, 247, 240, 0.85); font-weight: 500; }
+    @media (max-width: 768px) { .stats-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    
+    /* 6. O QUE MUDA NA SUA VIDA */
+    .benefits-sec { background-color: var(--off-white); padding: 6.5rem 1.5rem; }
+    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .benefit-card { background-color: var(--creme); border-radius: 8px; padding: 2.4rem 2rem; display: flex; align-items: center; gap: 1.35rem; transition: transform 0.3s ease, border-color 0.3s ease; border: 1px solid transparent; }
+    .benefit-card:hover { transform: translateY(-3px); border-color: var(--light-sage); }
+    .benefit-emoji { font-size: 2.25rem; line-height: 1; flex-shrink: 0; }
+    .benefit-text { font-size: 1.05rem; color: var(--dark); font-weight: 500; line-height: 1.45; }
+    @media (max-width: 1024px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) { .benefits-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+    
+    /* 7. OFERTA */
+    .offer-sec { background-color: var(--creme); padding: 7.5rem 1.5rem; }
+    .offer-card { background-color: var(--off-white); border: 1px solid var(--gold); border-radius: 12px; max-width: 660px; margin: 0 auto; padding: 4.5rem 3.5rem; box-shadow: 0 15px 40px rgba(201, 168, 76, 0.08); text-align: center; }
+    .offer-subtitle { font-size: 0.95rem; text-transform: uppercase; color: var(--gold); letter-spacing: 0.15em; font-weight: 600; margin-bottom: 0.5rem; }
+    .offer-title { font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3rem); color: var(--dark); margin-bottom: 1rem; font-weight: 400; }
+    .offer-price-container { margin: 2.5rem 0; }
+    .offer-price-lbl { font-size: 0.95rem; color: #6C6C68; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .offer-price { font-family: var(--serif); font-size: clamp(3.5rem, 8vw, 4.5rem); color: var(--dark); font-weight: 400; line-height: 1; }
+    .offer-list { list-style: none; padding: 0; margin: 2.5rem auto; max-width: 480px; text-align: left; }
+    .offer-list li { display: flex; align-items: flex-start; gap: 0.85rem; font-size: 1.05rem; color: #555551; margin-bottom: 1.2rem; line-height: 1.4; }
+    .offer-list li span.checkmark { color: var(--sage); font-weight: bold; font-size: 1.25rem; flex-shrink: 0; line-height: 1; }
+    .btn-cta-large { display: block; width: 100%; max-width: 440px; margin: 0 auto; background-color: var(--sage); color: var(--off-white); font-family: var(--sans); font-size: clamp(1.1rem, 2.5vw, 1.25rem); font-weight: 600; padding: 1.3rem 2rem; border-radius: 4px; text-decoration: none; transition: all 0.3s ease; letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid var(--sage); box-shadow: 0 6px 16px rgba(125, 155, 118, 0.2); }
+    .btn-cta-large:hover { background-color: #6a8563; border-color: #6a8563; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(125, 155, 118, 0.3); }
+    .offer-footer-text { font-size: 0.95rem; color: #555551; margin-top: 1.5rem; font-style: italic; }
+    @media (max-width: 600px) { .offer-card { padding: 3rem 1.5rem; } }
+    
+    /* 8. GARANTIA */
+    .guarantee-sec { background-color: var(--off-white); padding: 6.5rem 1.5rem; }
+    .guarantee-container { max-width: 720px; margin: 0 auto; text-align: center; }
+    .guarantee-icon { width: 56px; height: 56px; color: var(--sage); margin: 0 auto 1.5rem auto; }
+    .guarantee-svg { width: 100%; height: 100%; }
+    .guarantee-title { font-family: var(--serif); font-size: clamp(1.75rem, 3.5vw, 2.25rem); color: var(--dark); margin-bottom: 1.25rem; font-weight: 400; }
+    .guarantee-text { font-size: 1.08rem; color: #555551; line-height: 1.7; }
+    
+    /* 9. FAQ */
+    .faq-sec { background-color: var(--creme); padding: 6.5rem 1.5rem; }
+    .faq-container { max-width: 800px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--sage); padding: 1.5rem 0; }
+    .faq-item:first-of-type { border-top: 1px solid var(--sage); }
+    .faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; background: none; border: none; text-align: left; padding: 0; cursor: pointer; }
+    .faq-question { font-family: var(--serif); font-size: clamp(1.15rem, 2.5vw, 1.4rem); color: var(--dark); font-weight: 400; transition: color 0.3s ease; line-height: 1.3; padding-right: 1.5rem; }
+    .faq-trigger:hover .faq-question { color: var(--sage); }
+    .faq-chevron { width: 24px; height: 24px; color: var(--sage); transition: transform 0.3s ease; flex-shrink: 0; }
+    .faq-item.active .faq-chevron { transform: rotate(180deg); }
+    .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    .faq-answer { color: #555551; font-size: 1.02rem; line-height: 1.7; padding-top: 1rem; }
+    
+    /* 10. RODAPE */
+    .footer-sec { background-color: var(--dark); color: var(--creme); padding: 4.5rem 1.5rem; text-align: center; }
+    .footer-logo { font-family: var(--serif); font-size: 1.75rem; color: var(--creme); margin-bottom: 0.5rem; font-weight: 400; }
+    .footer-brand { font-size: 0.95rem; color: rgba(250, 247, 240, 0.6); margin-bottom: 1.5rem; }
+    .footer-quote { font-family: var(--serif); font-size: 1.25rem; color: var(--creme); margin-bottom: 2.5rem; font-style: italic; }
+    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; max-width: 600px; margin: 0 auto; }
+    .footer-link { color: rgba(250, 247, 240, 0.85); text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease; }
+    .footer-link:hover { color: var(--gold); }
+    .footer-divider { color: rgba(250, 247, 240, 0.3); }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HERO -->
+  <section class="hero-sec">
+    <div class="container">
+      <h1 class="hero-title">Atelier das Velas</h1>
+      <div class="gold-line"></div>
+      <h2 class="hero-subtitle">"Você sabia que dá para transformar cera e essência em arte, presente e renda — dentro da sua própria casa?"</h2>
+      <p class="hero-desc">Descubra o guia definitivo e domine a arte de criar velas perfumadas deslumbrantes do zero absoluto. Perfeito para hobby ou para faturar alto.</p>
+      <a href="#oferta" class="btn-cta">Quero começar agora</a>
+    </div>
+  </section>
+
+  <!-- 2. PARA QUEM É ESSE GUIA -->
+  <section class="guide-sec">
+    <div class="container">
+      <h2 class="section-title">Para quem é este guia?</h2>
+      <p class="section-subtitle">Duas formas incríveis de se conectar com a arte das velas artesanais.</p>
+      <div class="guide-grid">
+        <div class="guide-card">
+          <h3>Para quem ama criar</h3>
+          <p>Se você procura um hobby gratificante, quer preencher seu lar de aromas relaxantes ou criar presentes personalizados incríveis feitos por suas próprias mãos que expressam amor e cuidado absoluto.</p>
+        </div>
+        <div class="guide-card">
+          <h3>Para quem quer renda extra</h3>
+          <p>Se o seu desejo é construir uma fonte lucrativa de renda trabalhando no conforto da sua casa, aprendendo como posicionar e vender de forma inteligente, com baixíssimo investimento inicial e altíssima margem de ganho.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. O QUE VOCÊ VAI RECEBER -->
+  <section class="receive-sec">
+    <div class="container">
+      <h2 class="section-title">O que você vai receber</h2>
+      <p class="section-subtitle">Tudo o que você precisa para se tornar especialista e faturar de verdade.</p>
+      
+      <div class="receive-grid">
+        <div class="receive-card">
+          <div class="receive-card-num">01</div>
+          <h3>40 receitas completas</h3>
+          <p>Ingredientes detalhados, proporção perfeita de cera e essência, escolha correta do pavio e passo a passo simples de executar para nunca perder material.</p>
+        </div>
+        <div class="receive-card">
+          <div class="receive-card-num">02</div>
+          <h3>5 categorias temáticas</h3>
+          <p>Fórmulas prontas divididas em: Relaxamento (acalmar), Energia (revigorar), Natureza (frescor), Datas Especiais (presentear) e Decorativas (estilo).</p>
+        </div>
+        <div class="receive-card">
+          <div class="receive-card-num">03</div>
+          <h3>Módulo de embalagem</h3>
+          <p>Como valorizar sua vela através do visual: vidros elegantes, latinhas, rótulos charmosos e embrulhos sofisticados que elevam instantaneamente o preço percebido.</p>
+        </div>
+        <div class="receive-card">
+          <div class="receive-card-num">04</div>
+          <h3>Precificação e vendas</h3>
+          <p>O guia de matemática simples para calcular seus custos exatos até os centavos e definir um preço final lucrativo sem desvalorizar seu trabalho precioso.</p>
+        </div>
+        <div class="receive-card">
+          <div class="receive-card-num">05</div>
+          <h3>Onde vender com sucesso</h3>
+          <p>Manual definitivo para receber pedidos do Instagram, estruturar sua vitrine na Shopee bem pesquisada, expor em feiras locais e vender aos amigos pelo WhatsApp.</p>
+        </div>
+        <div class="receive-card">
+          <div class="receive-card-num">06</div>
+          <h3>Fotografia prática com celular</h3>
+          <p>Truques fáceis para fotografar em casa usando iluminação natural de janelas, montagem de mini cenários minimalistas e ângulos profissionais sem equipamento caro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PRÉVIA DO CONTEÚDO — CARROSSEL -->
+  <section class="carousel-sec">
+    <div class="container">
+      <h2 class="section-title">Veja como é por dentro</h2>
+      <p class="section-subtitle">Uma prévia da beleza e organização das páginas que esperam por você.</p>
+      
+      <div class="carousel-container">
+        <button class="carousel-arrow arrow-prev" aria-label="Slide anterior">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        
+        <div class="carousel-wrapper">
+          <div id="carouselTrack" class="carousel-track">
+            <div class="carousel-slide">
+              <div class="slide-card">
+                <div class="slide-img-container">
+                  <img class="slide-img" src="https://i.imgur.com/HulBtN1.jpeg" alt="Receitas completas passo a passo" referrerPolicy="no-referrer">
+                </div>
+                <div class="slide-caption">Receitas completas passo a passo</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="slide-card">
+                <div class="slide-img-container">
+                  <img class="slide-img" src="https://i.imgur.com/Rkz1JEE.jpeg" alt="Categorias aromáticas" referrerPolicy="no-referrer">
+                </div>
+                <div class="slide-caption">Categorias aromáticas</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="slide-card">
+                <div class="slide-img-container">
+                  <img class="slide-img" src="https://i.imgur.com/zYKadiN.jpeg" alt="Módulo de natureza e frescor" referrerPolicy="no-referrer">
+                </div>
+                <div class="slide-caption">Módulo de natureza e frescor</div>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div class="slide-card">
+                <div class="slide-img-container">
+                  <img class="slide-img" src="https://i.imgur.com/NJT1nU0.jpeg" alt="Módulo de vendas e embalagem" referrerPolicy="no-referrer">
+                </div>
+                <div class="slide-caption">Módulo de vendas e embalagem</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <button class="carousel-arrow arrow-next" aria-label="Próximo slide">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        
+        <div id="carouselDots" class="carousel-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. NÚMEROS QUE IMPRESSIONAM -->
+  <section class="stats-sec">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stats-item">
+          <div class="stats-num">40</div>
+          <div class="stats-label">Receitas Exclusivas</div>
+        </div>
+        <div class="stats-item">
+          <div class="stats-num">5</div>
+          <div class="stats-label">Categorias Temáticas</div>
+        </div>
+        <div class="stats-item">
+          <div class="stats-num">1</div>
+          <div class="stats-label">Guia Completo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. O QUE MUDA NA SUA VIDA -->
+  <section class="benefits-sec">
+    <div class="container">
+      <h2 class="section-title">O que muda na sua vida</h2>
+      <p class="section-subtitle">Conquiste liberdade e momentos inigualáveis com o aprendizado prático do Atelier das Velas.</p>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-emoji">🕯️</div>
+          <p class="benefit-text">Você faz sua primeira vela no mesmo dia</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-emoji">🎁</div>
+          <p class="benefit-text">Você aprende a criar presentes únicos que emocionam</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-emoji">💰</div>
+          <p class="benefit-text">Você aprende a precificar e nunca mais vende barato</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-emoji">📱</div>
+          <p class="benefit-text">Você descobre onde e como vender pelo celular</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-emoji">🌿</div>
+          <p class="benefit-text">Você usa ingredientes simples e acessíveis</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-emoji">✨</div>
+          <p class="benefit-text">Você transforma uma habilidade em fonte de renda real</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. OFERTA -->
+  <section id="oferta" class="offer-sec">
+    <div class="container">
+      <div class="offer-card">
+        <div class="offer-subtitle">Acesso Vitalício</div>
+        <h2 class="offer-title">Atelier das Velas</h2>
+        <p style="color: #6C6C68; font-size: 1.05rem; max-width: 500px; margin: 0 auto;">Dê início hoje mesmo ao seu santuário aromático. Comece a criar velas inesquecíveis.</p>
+        
+        <div class="offer-price-container">
+          <div class="offer-price-lbl">Valor Promocional</div>
+          <div class="offer-price">R$ 37,00</div>
+        </div>
+        
+        <ul class="offer-list">
+          <li><span class="checkmark">✓</span> <span>Guia Completo com 40 Receitas passo a passo</span></li>
+          <li><span class="checkmark">✓</span> <span>Acesso às 5 Categorias Temáticas exclusivas</span></li>
+          <li><span class="checkmark">✓</span> <span>Manual focado de Embalagem e Apresentação</span></li>
+          <li><span class="checkmark">✓</span> <span>Módulo de Marketing, Divulgação e Onde Vender</span></li>
+          <li><span class="checkmark">✓</span> <span>Ferramenta prática de Precificação e Vendas</span></li>
+          <li><span class="checkmark">✓</span> <span>Guia Ilustrado de Fotografia de Produtos</span></li>
+        </ul>
+        
+        <a href="https://pay.wiapy.com/DKo0Mv-TUf1" target="_blank" class="btn-cta-large">Quero meu Atelier agora</a>
+        <p class="offer-footer-text">Acesso imediato após a compra. Você faz sua primeira vela hoje.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. GARANTIA -->
+  <section class="guarantee-sec">
+    <div class="container">
+      <div class="guarantee-container">
+        <div class="guarantee-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="guarantee-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h2 class="guarantee-title">7 dias de garantia incondicional</h2>
+        <p class="guarantee-text">Se nos primeiros 7 dias você sentir que o guia não é para você, devolvemos 100% do seu dinheiro. Sem perguntas, sem papelada e com a elegância de sempre.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FAQ -->
+  <section class="faq-sec">
+    <div class="container">
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      <p class="section-subtitle">Esclarecemos suas dúvidas para que você dê esse lindo passo com tranquilidade.</p>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <h3 class="faq-question">Preciso ter experiência para começar?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p class="faq-answer">Não! O guia foi desenhado tanto para iniciantes do zero absoluto quanto para quem já tem alguma noção e quer se aperfeiçoar de forma elegante. Explicamos tudo passo a passo detalhadamente.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <h3 class="faq-question">Quais materiais eu preciso comprar?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p class="faq-answer">Basicamente cera de coco, soja ou palma, pavios, essências de boa qualidade e recipientes (como potes de vidro, xícaras ou latas). No guia, indicamos excelentes fornecedores nacionais com ótimo custo-benefício para facilitar suas compras.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <h3 class="faq-question">Como vou receber o guia?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p class="faq-answer">O envio é 100% digital e imediato. Logo após a confirmação rápida do pagamento, você receberá um e-mail com todas as instruções e o link exclusivo para acessar seu material onde quiser — do seu celular, tablet ou computador.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <h3 class="faq-question">Posso realmente ganhar dinheiro vendendo velas?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p class="faq-answer">Sim! Velas são itens de altíssima percepção de valor. O custo para produzir é baixo, permitindo margens de lucro substanciais se você aplicar as técnicas de embalagem e divulgação corretas que ensinamos em nosso guia.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <h3 class="faq-question">E se eu não gostar?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p class="faq-answer">Você conta com a nossa garantia especial incondicional de 7 dias. Se por qualquer motivo sentir que o conteúdo de velas não atende suas expectativas, basta nos enviar um e-mail curto e devolvemos 100% do seu investimento.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <h3 class="faq-question">Funciona no celular?</h3>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-content">
+            <p class="faq-answer">Com certeza! O livro digital e os módulos adicionais funcionam perfeitamente e são lindamente otimizados para leitura direta em telas mobile de qualquer tamanho.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. RODAPÉ -->
+  <footer class="footer-sec">
+    <div class="container">
+      <div class="footer-logo">Atelier das Velas</div>
+      <div class="footer-brand">A arte de aromatizar vidas · © 2026 Todos os direitos reservados</div>
+      <div class="footer-quote">"Que sua chama nunca se apague. 🕯️"</div>
+      
+      <div class="footer-links">
+        <a href="#" class="footer-link">Política de Privacidade</a>
+        <span class="footer-divider">·</span>
+        <a href="#" class="footer-link">Termos de Uso</a>
+        <span class="footer-divider">·</span>
+        <a href="#" class="footer-link">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      /* --- 1. ACCORDION (FAQ) --- */
+      const faqTriggers = document.querySelectorAll(".faq-trigger");
+      faqTriggers.forEach(trigger => {
+        trigger.addEventListener("click", () => {
+          const item = trigger.closest(".faq-item");
+          const content = item.querySelector(".faq-content");
+          const isActive = item.classList.contains("active");
+          
+          document.querySelectorAll(".faq-item").forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains("active")) {
+              otherItem.classList.remove("active");
+              otherItem.querySelector(".faq-content").style.maxHeight = null;
+            }
+          });
+          
+          if (isActive) {
+            item.classList.remove("active");
+            content.style.maxHeight = null;
+          } else {
+            item.classList.add("active");
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      });
+
+      /* --- 2. CARROSSEL (PRÉVIA DO CONTEÚDO) --- */
+      const track = document.getElementById("carouselTrack");
+      const slides = Array.from(track.children);
+      const prevButton = document.querySelector(".arrow-prev");
+      const nextButton = document.querySelector(".arrow-next");
+      const dotsContainer = document.getElementById("carouselDots");
+      
+      let currentIndex = 0;
+      let isDesktop = window.innerWidth >= 768;
+      let maxIndex = isDesktop ? 2 : 3;
+
+      function setupDots() {
+        dotsContainer.innerHTML = "";
+        const dotsCount = maxIndex + 1;
+        for (let i = 0; i < dotsCount; i++) {
+          const dot = document.createElement("button");
+          dot.classList.add("carousel-dot");
+          dot.setAttribute("aria-label", `Ir para o slide ${i + 1}`);
+          if (i === currentIndex) dot.classList.add("active");
+          dot.addEventListener("click", () => {
+            currentIndex = i;
+            updateCarousel();
+          });
+          dotsContainer.appendChild(dot);
+        }
+      }
+
+      function updateCarousel() {
+        const slidePct = isDesktop ? 50 : 100;
+        track.style.transform = `translateX(-${currentIndex * slidePct}%)`;
+        
+        const dots = Array.from(dotsContainer.children);
+        dots.forEach((dot, idx) => {
+          if (idx === currentIndex) dot.classList.add("active");
+          else dot.classList.remove("active");
+        });
+      }
+
+      window.addEventListener("resize", () => {
+        const currentMode = window.innerWidth >= 768;
+        if (currentMode !== isDesktop) {
+          isDesktop = currentMode;
+          maxIndex = isDesktop ? 2 : 3;
+          if (currentIndex > maxIndex) currentIndex = maxIndex;
+          setupDots();
+          updateCarousel();
+        }
+      });
+
+      prevButton.addEventListener("click", () => {
+        if (currentIndex > 0) currentIndex--;
+        else currentIndex = maxIndex;
+        updateCarousel();
+      });
+
+      nextButton.addEventListener("click", () => {
+        if (currentIndex < maxIndex) currentIndex++;
+        else currentIndex = 0;
+        updateCarousel();
+      });
+
+      /* --- SWIPE / GESTURE CONTROL (Touch + Mouse Drag) --- */
+      let startX = 0;
+      let currentX = 0;
+      let isDragging = false;
+      let didMove = false;
+
+      function getClientX(e) {
+        return e.touches ? e.touches[0].clientX : e.clientX;
+      }
+
+      function onStart(e) {
+        if (e.type === "mousedown" && e.button !== 0) return;
+        startX = getClientX(e);
+        currentX = startX;
+        isDragging = true;
+        didMove = false;
+        track.style.transition = "none";
+      }
+
+      function onMove(e) {
+        if (!isDragging) return;
+        didMove = true;
+        currentX = getClientX(e);
+        const diff = currentX - startX;
+        const trackWidth = track.clientWidth;
+        const slidePct = isDesktop ? 0.5 : 1.0;
+        const baseTranslate = -currentIndex * (trackWidth * slidePct);
+        let finalTranslate = baseTranslate + diff;
+        const minTranslate = -maxIndex * (trackWidth * slidePct);
+        if (finalTranslate > 0) {
+          finalTranslate = finalTranslate * 0.35;
+        } else if (finalTranslate < minTranslate) {
+          finalTranslate = minTranslate + (finalTranslate - minTranslate) * 0.35;
+        }
+        track.style.transform = `translateX(${finalTranslate}px)`;
+      }
+
+      function onEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        track.style.transition = "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)";
+        const diff = currentX - startX;
+        const swipeThreshold = 55;
+        if (didMove && Math.abs(diff) > swipeThreshold) {
+          if (diff < 0 && currentIndex < maxIndex) currentIndex++;
+          else if (diff > 0 && currentIndex > 0) currentIndex--;
+        }
+        updateCarousel();
+      }
+
+      track.addEventListener("touchstart", onStart, { passive: true });
+      track.addEventListener("touchmove", onMove, { passive: true });
+      track.addEventListener("touchend", onEnd);
+      track.addEventListener("mousedown", onStart);
+      window.addEventListener("mousemove", onMove);
+      window.addEventListener("mouseup", onEnd);
+      track.addEventListener("mouseleave", onEnd);
+
+      setupDots();
+      updateCarousel();
+    });
+  </script>
+</body>
+</html>
